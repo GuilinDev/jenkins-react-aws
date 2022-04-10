@@ -3,14 +3,16 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "npm install"
-                sh "npm run build"
+                echo "Inside Build"
+                // sh "sudo npm install"
+                // sh "sudo npm run build"
             }
         }
         stage("Deploy") {
             steps {
-                sh "rm -rf /var/www/jenkins-react-aws"
-                sh "cp -r ${WORKSPACE}/build/ /var/www/jenkins-react-aws/"
+                echo "Inside Deploy"
+                // sh "sudo rm -rf /var/www/jenkins-react-aws"
+                // sh "sudo cp -r ${WORKSPACE}/build/ /var/www/jenkins-react-aws/"
             }
         }
     }
